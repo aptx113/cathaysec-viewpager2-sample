@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/offlineDisplayFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -15,4 +15,8 @@
     <action
         android:id="@+id/navigate_to_homeListFragment"
         app:destination="@id/homeListFragment" />
+    <fragment
+        android:id="@+id/offlineDisplayFragment"
+        android:name="com.danteyu.studio.cathaysecassigment.offline.OfflineDisplayFragment"
+        android:label="OfflineDisplayFragment" /><action android:id="@+id/navigate_to__homeFragment" app:destination="@id/homeFragment"/>
 </navigation>
