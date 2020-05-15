@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorBlack">#3F3A3A</color>
+    <color name="brownishGrey">#646464</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="warmGrey">#999999</color>
+    <color name="transparent">#00000000</color>
+    <color name="warmGreyTwo">#888888</color>
+    <color name="scarletRed">#d0021b</color>
+    <color name="blue">#5b9bd5</color>
+    <color name="tab_blue">#66a1d8</color>
+</resources>
