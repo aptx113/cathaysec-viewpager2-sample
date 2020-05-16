@@ -7,16 +7,27 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.danteyu.studio.cathaysecassigment.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment">
+        <argument
+            android:name="positionKey"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="smoothScrollKey"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </fragment>
     <fragment
         android:id="@+id/homeListFragment"
         android:name="com.danteyu.studio.cathaysecassigment.home.HomeListFragment"
         android:label="HomeListFragment" />
-    <action
-        android:id="@+id/navigate_to_homeListFragment"
-        app:destination="@id/homeListFragment" />
     <fragment
         android:id="@+id/offlineDisplayFragment"
         android:name="com.danteyu.studio.cathaysecassigment.offline.OfflineDisplayFragment"
-        android:label="OfflineDisplayFragment" /><action android:id="@+id/navigate_to__homeFragment" app:destination="@id/homeFragment"/>
+        android:label="OfflineDisplayFragment" />
+    <action
+        android:id="@+id/navigate_to__homeFragment"
+        app:destination="@id/homeFragment"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:popExitAnim="@anim/fragment_fade_exit" />
 </navigation>

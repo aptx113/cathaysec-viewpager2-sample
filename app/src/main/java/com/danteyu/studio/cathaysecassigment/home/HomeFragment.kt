@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.danteyu.studio.cathaysecassigment.databinding.FragmentHomeBinding
 import com.google.android.material.tabs.TabLayoutMediator
-import kotlinx.android.synthetic.main.fragment_home.*
 
 /**
  * Created by George Yu on 2020/4/27.
@@ -32,6 +31,9 @@ class HomeFragment : Fragment() {
             tab.text = getTabTitle(position)
         }.attach()
 
+        val args = HomeFragmentArgs.fromBundle(requireArguments())
+
+        setupDestination(args.positionKey, args.smoothScrollKey)
 
         return binding.root
     }
@@ -44,7 +46,7 @@ class HomeFragment : Fragment() {
         }
     }
 
-    fun switchFragment(target: Int) {
-        viewpager.currentItem = target
+    fun setupDestination(position: Int, isSmoothScroll: Boolean = true) {
+        viewpager.setCurrentItem(position, isSmoothScroll)
     }
 }

@@ -4,6 +4,8 @@
 
     <data>
 
+        <import type="com.danteyu.studio.cathaysecassigment.home.HomeViewPagerAdapterKt" />
+
         <variable
             name="viewModel"
             type="com.danteyu.studio.cathaysecassigment.offline.OfflineDisplayViewModel" />
@@ -31,6 +33,7 @@
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="@{()-> viewModel.navigateToHomeList(HomeViewPagerAdapterKt.HOME_LIST_PAGE_INDEX)}"
             android:text="navigate to HomeList"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

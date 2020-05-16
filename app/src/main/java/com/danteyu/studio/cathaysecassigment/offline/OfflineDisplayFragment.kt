@@ -29,15 +29,18 @@ class OfflineDisplayFragment : Fragment() {
             lifecycleOwner = this@OfflineDisplayFragment.viewLifecycleOwner
         }
         binding.viewModel = viewModel
-//        binding.buttonOffline1.setOnClickListener {
-//            findNavController().navigate(
-//                NavigationDirections.navigateToHomeFragment()
-//            )
-//        }
+
         viewModel.navigateToHome.observe(viewLifecycleOwner, Observer {
             it?.let {
                 findNavController().navigate(NavigationDirections.navigateToHomeFragment())
                 viewModel.onHomeNavigated()
+            }
+        })
+
+        viewModel.navigateToHomeList.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                findNavController().navigate(NavigationDirections.navigateToHomeFragment(it))
+                viewModel.onHomeListNavigated()
             }
         })
 

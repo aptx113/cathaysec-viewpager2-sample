@@ -14,11 +14,24 @@ class OfflineDisplayViewModel : ViewModel() {
     val navigateToHome: LiveData<Boolean>
         get() = _navigateToHome
 
+    private val _navigateToHomeList = MutableLiveData<Int>()
+
+    val navigateToHomeList: LiveData<Int>
+        get() = _navigateToHomeList
+
     fun navigateToHome() {
         _navigateToHome.value = true
     }
 
     fun onHomeNavigated() {
         _navigateToHome.value = null
+    }
+
+    fun navigateToHomeList(position: Int) {
+        _navigateToHomeList.value = position
+    }
+
+    fun onHomeListNavigated() {
+        _navigateToHomeList.value = null
     }
 }
