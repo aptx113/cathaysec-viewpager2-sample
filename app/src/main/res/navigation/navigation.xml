@@ -2,12 +2,12 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation"
-    app:startDestination="@id/offlineDisplayFragment">
+    app:startDestination="@id/HomeFragment">
 
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.danteyu.studio.cathaysecassigment.home.HomeFragment"
-        android:label="HomeFragment">
+        android:id="@+id/viewPager2Fragment"
+        android:name="com.danteyu.studio.cathaysecassigment.ui.viewPager2.ViewPager2Fragment"
+        android:label="ViewPager2Fragment">
         <argument
             android:name="positionKey"
             android:defaultValue="0"
@@ -18,16 +18,20 @@
             app:argType="boolean" />
     </fragment>
     <fragment
-        android:id="@+id/homeListFragment"
-        android:name="com.danteyu.studio.cathaysecassigment.home.HomeListFragment"
-        android:label="HomeListFragment" />
+        android:id="@+id/viewPager2ListFragment"
+        android:name="com.danteyu.studio.cathaysecassigment.ui.viewPager2.ViewPager2ListFragment"
+        android:label="ViewPager2ListFragment" />
     <fragment
-        android:id="@+id/offlineDisplayFragment"
-        android:name="com.danteyu.studio.cathaysecassigment.offline.OfflineDisplayFragment"
-        android:label="OfflineDisplayFragment" />
+        android:id="@+id/HomeFragment"
+        android:name="com.danteyu.studio.cathaysecassigment.ui.home.HomeFragment"
+        android:label="HomeFragment" />
     <action
-        android:id="@+id/navigate_to__homeFragment"
-        app:destination="@id/homeFragment"
+        android:id="@+id/navigate_to_ViewPager2Fragment"
+        app:destination="@id/viewPager2Fragment"
         app:enterAnim="@anim/fragment_fade_enter"
         app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment
+        android:id="@+id/sectionFragment"
+        android:name="com.danteyu.studio.cathaysecassigment.ui.section.SectionFragment"
+        android:label="SectionFragment" />
 </navigation>
