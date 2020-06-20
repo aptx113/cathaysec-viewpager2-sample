@@ -1,4 +1,4 @@
-package com.danteyu.studio.cathaysecassigment.ui.viewPager2
+package com.danteyu.studio.cathaysecassigment.ui.bank
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,16 +7,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
-import com.danteyu.studio.cathaysecassigment.databinding.FragmentViewPager2Binding
+import com.danteyu.studio.cathaysecassigment.databinding.FragmentBankBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
 /**
  * Created by George Yu on 2020/4/27.
  */
-class ViewPager2Fragment : Fragment() {
+class BankFragment : Fragment() {
 
     lateinit var viewpager: ViewPager2
-    private val args by navArgs<ViewPager2FragmentArgs>()
+    private val args by navArgs<BankFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,7 +24,7 @@ class ViewPager2Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = FragmentViewPager2Binding.inflate(inflater, container, false)
+        val binding = FragmentBankBinding.inflate(inflater, container, false)
 
         viewpager = binding.viewPagerHome
 

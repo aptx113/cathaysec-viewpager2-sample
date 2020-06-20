@@ -4,7 +4,7 @@
 
     <data>
 
-        <import type="com.danteyu.studio.cathaysecassigment.ui.viewPager2.ViewPager2ViewPagerAdapterKt" />
+        <import type="com.danteyu.studio.cathaysecassigment.ui.bank.BankAdapterKt" />
 
         <variable
             name="viewModel"
@@ -33,7 +33,7 @@
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{()-> viewModel.navigateToViewPager2List(ViewPager2ViewPagerAdapterKt.VIEWPAGER2_LIST_PAGE_INDEX)}"
+            android:onClick="@{()-> viewModel.navigateToViewPager2List(BankAdapterKt.VIEWPAGER2_LIST_PAGE_INDEX)}"
             android:text="navigate to ViewPager2List"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

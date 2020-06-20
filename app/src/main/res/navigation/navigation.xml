@@ -5,9 +5,9 @@
     app:startDestination="@id/HomeFragment">
 
     <fragment
-        android:id="@+id/viewPager2Fragment"
-        android:name="com.danteyu.studio.cathaysecassigment.ui.viewPager2.ViewPager2Fragment"
-        android:label="ViewPager2Fragment">
+        android:id="@+id/BankFragment"
+        android:name="com.danteyu.studio.cathaysecassigment.ui.bank.BankFragment"
+        android:label="BankFragment">
         <argument
             android:name="positionKey"
             android:defaultValue="0"
@@ -18,16 +18,17 @@
             app:argType="boolean" />
     </fragment>
     <fragment
-        android:id="@+id/viewPager2ListFragment"
-        android:name="com.danteyu.studio.cathaysecassigment.ui.viewPager2.ViewPager2ListFragment"
-        android:label="ViewPager2ListFragment" />
+        android:id="@+id/BankListFragment"
+        android:name="com.danteyu.studio.cathaysecassigment.ui.bank.item.BankListFragment"
+        android:label="BankListFragment" />
+
     <fragment
         android:id="@+id/HomeFragment"
         android:name="com.danteyu.studio.cathaysecassigment.ui.home.HomeFragment"
         android:label="HomeFragment" />
     <action
-        android:id="@+id/navigate_to_ViewPager2Fragment"
-        app:destination="@id/viewPager2Fragment"
+        android:id="@+id/navigate_to_BankFragment"
+        app:destination="@id/BankFragment"
         app:enterAnim="@anim/fragment_fade_enter"
         app:popExitAnim="@anim/fragment_fade_exit" />
     <fragment

@@ -1,4 +1,4 @@
-package com.danteyu.studio.cathaysecassigment.data.model
+package com.danteyu.studio.cathaysecassigment.data.model.bank
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

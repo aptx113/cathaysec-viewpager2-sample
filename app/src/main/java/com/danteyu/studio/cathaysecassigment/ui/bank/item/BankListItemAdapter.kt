@@ -1,24 +1,23 @@
-package com.danteyu.studio.cathaysecassigment.ui.viewPager2
+package com.danteyu.studio.cathaysecassigment.ui.bank.item
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.danteyu.studio.cathaysecassigment.data.model.WeekItem
-import com.danteyu.studio.cathaysecassigment.databinding.ItemViewPager2ListItemBinding
+import com.danteyu.studio.cathaysecassigment.data.model.bank.WeekItem
+import com.danteyu.studio.cathaysecassigment.databinding.ItemViewBankListBinding
 import com.danteyu.studio.cathaysecassigment.ui.common.InfiniteListAdapter
 import com.danteyu.studio.cathaysecassigment.ui.common.SingleFieldDiffUtils
 
 /**
  * Created by George Yu on 2020/4/27.
  */
-class ViewPager2ListItemAdapter :
-    InfiniteListAdapter<WeekItem, ViewPager2ListItemAdapter.WeekItemViewHolder>(SingleFieldDiffUtils { it }) {
+class BankListItemAdapter :
+    InfiniteListAdapter<WeekItem, BankListItemAdapter.WeekItemViewHolder>(SingleFieldDiffUtils { it }) {
 
     override fun getRealCount() = itemCount
 
 
-    class WeekItemViewHolder(private var binding: ItemViewPager2ListItemBinding) :
+    class WeekItemViewHolder(private var binding: ItemViewBankListBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(weekItem: WeekItem) {
             binding.weekItem = weekItem
@@ -29,7 +28,7 @@ class ViewPager2ListItemAdapter :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WeekItemViewHolder {
         return WeekItemViewHolder(
-            ItemViewPager2ListItemBinding.inflate(
+            ItemViewBankListBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -37,7 +36,7 @@ class ViewPager2ListItemAdapter :
         )
     }
 
-        override fun onBindViewHolderByRealPosition(holder: WeekItemViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        override fun onBindViewHolderByRealPosition(holder: WeekItemViewHolder, realPosition: Int) {
+        holder.bind(getItem(realPosition))
     }
 }

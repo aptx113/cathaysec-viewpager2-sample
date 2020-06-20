@@ -32,14 +32,14 @@ class HomeFragment : Fragment() {
 
         viewModel.navigateToHome.observe(viewLifecycleOwner, Observer {
             it?.let {
-                findNavController().navigate(NavigationDirections.navigateToViewPager2Fragment())
+                findNavController().navigate(NavigationDirections.navigateToBankFragment())
                 viewModel.onHomeNavigated()
             }
         })
 
         viewModel.navigateToHomeList.observe(viewLifecycleOwner, Observer {
             it?.let {
-                findNavController().navigate(NavigationDirections.navigateToViewPager2Fragment(it))
+                findNavController().navigate(NavigationDirections.navigateToBankFragment(it))
                 viewModel.onHomeListNavigated()
             }
         })

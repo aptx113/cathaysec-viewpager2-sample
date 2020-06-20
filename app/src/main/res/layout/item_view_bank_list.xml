@@ -7,7 +7,7 @@
 
         <variable
             name="weekItem"
-            type="com.danteyu.studio.cathaysecassigment.data.model.WeekItem" />
+            type="com.danteyu.studio.cathaysecassigment.data.model.bank.WeekItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

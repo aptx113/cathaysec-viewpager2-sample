@@ -1,17 +1,17 @@
-package com.danteyu.studio.cathaysecassigment.ui.viewPager2
+package com.danteyu.studio.cathaysecassigment.ui.bank.item
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.danteyu.studio.cathaysecassigment.data.model.WeekItem
-import com.danteyu.studio.cathaysecassigment.databinding.FragmentViewPager2ListBinding
+import com.danteyu.studio.cathaysecassigment.data.model.bank.WeekItem
+import com.danteyu.studio.cathaysecassigment.databinding.FragmentBankListBinding
 
 /**
  * Created by George Yu on 2020/4/27.
  */
-class ViewPager2ListFragment : Fragment() {
+class BankListFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,9 +19,10 @@ class ViewPager2ListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = FragmentViewPager2ListBinding.inflate(inflater, container, false)
+        val binding = FragmentBankListBinding.inflate(inflater, container, false)
 
-        val adapter = ViewPager2ListItemAdapter()
+        val adapter =
+            BankListItemAdapter()
 
         val weekItemList = listOf(
             WeekItem(
