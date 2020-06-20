@@ -10,9 +10,6 @@
             name="actionSection"
             type="com.danteyu.studio.cathaysecassigment.data.model.section.ActionSection" />
 
-        <variable
-            name="viewModel"
-            type="com.danteyu.studio.cathaysecassigment.ui.section.SectionViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -37,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="@dimen/space_normal_16"
-            android:text="@{String.valueOf(viewModel.actionSection.likes)}"
+            android:text="@{String.valueOf(actionSection.likes)}"
             android:textColor="@color/colorWhite"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"

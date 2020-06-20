@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
 
     <data>
+
+        <variable
+            name="recommendSection"
+            type="com.danteyu.studio.cathaysecassigment.data.model.section.RecommendSection" />
 
     </data>
 
@@ -15,9 +20,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
+            android:layout_marginStart="@dimen/space_normal_16"
             android:layout_marginTop="@dimen/space_normal_8"
             android:includeFontPadding="false"
-            android:layout_marginStart="@dimen/space_normal_16"
             android:text="This is a RecyclerView"
             android:textColor="@color/colorBlack"
             android:textSize="16sp"
@@ -29,8 +34,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_normal_16"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txt_section" />
+            app:layout_constraintTop_toBottomOf="@id/txt_section"
+            app:spanCount="2"
+            binding:recommendItems="@{recommendSection.recommendSectionItems}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
