@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Cathaysec Assigment</string>
     <string name="switch_to_tab2">switch to TAB2</string>
+    <string name="home">Home</string>
+    <string name="viewpager2">viewpager2</string>
+    <string name="section">Section</string>
 </resources>

@@ -2,17 +2,37 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/HomeFragment">
 
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.danteyu.studio.cathaysecassigment.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:id="@+id/BankFragment"
+        android:name="com.danteyu.studio.cathaysecassigment.ui.bank.BankFragment"
+        android:label="BankFragment">
+        <argument
+            android:name="positionKey"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="smoothScrollKey"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </fragment>
     <fragment
-        android:id="@+id/homeListFragment"
-        android:name="com.danteyu.studio.cathaysecassigment.home.HomeListFragment"
-        android:label="HomeListFragment" />
+        android:id="@+id/BankListFragment"
+        android:name="com.danteyu.studio.cathaysecassigment.ui.bank.item.BankListFragment"
+        android:label="BankListFragment" />
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.danteyu.studio.cathaysecassigment.ui.home.HomeFragment"
+        android:label="HomeFragment" />
     <action
-        android:id="@+id/navigate_to_homeListFragment"
-        app:destination="@id/homeListFragment" />
+        android:id="@+id/navigate_to_BankFragment"
+        app:destination="@id/BankFragment"
+        app:enterAnim="@anim/fragment_fade_enter"
+        app:popExitAnim="@anim/fragment_fade_exit" />
+    <fragment
+        android:id="@+id/sectionFragment"
+        android:name="com.danteyu.studio.cathaysecassigment.ui.section.SectionFragment"
+        android:label="SectionFragment" />
 </navigation>
