@@ -14,8 +14,9 @@ abstract class InfiniteListAdapter<T : Any?, VH : RecyclerView.ViewHolder>(diffU
         private const val INFINITE_LOOP_TOTAL_COUNT = 10000
     }
 
-    abstract fun getRealCount(): Int
     abstract fun onBindViewHolderByRealPosition(holder: VH, realPosition: Int)
+
+    private fun getRealCount(): Int = super.getItemCount()
 
     override fun getItemCount(): Int {
         super.getItemCount()

@@ -14,9 +14,6 @@ import com.danteyu.studio.cathaysecassigment.ui.common.SingleFieldDiffUtils
 class BankListItemAdapter :
     InfiniteListAdapter<WeekItem, BankListItemAdapter.WeekItemViewHolder>(SingleFieldDiffUtils { it }) {
 
-    override fun getRealCount() = itemCount
-
-
     class WeekItemViewHolder(private var binding: ItemViewBankListBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(weekItem: WeekItem) {

@@ -5,9 +5,9 @@
         android:icon="@drawable/ic_action_home"
         android:title="@string/home" />
     <item
-        android:id="@+id/viewPager2Fragment"
+        android:id="@+id/BankFragment"
         android:icon="@drawable/ic_view_agenda"
-        android:title="@string/viewpager2" />
+        android:title="@string/bank" />
     <item
         android:id="@+id/sectionFragment"
         android:icon="@drawable/ic_call_split"
