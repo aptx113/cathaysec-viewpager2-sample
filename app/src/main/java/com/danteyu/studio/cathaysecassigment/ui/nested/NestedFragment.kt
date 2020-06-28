@@ -22,6 +22,7 @@ class NestedFragment : Fragment() {
     ): View? = FragNestedBinding.inflate(inflater, container, false).run {
         viewModel = this@NestedFragment.viewModel
         lifecycleOwner = this@NestedFragment.viewLifecycleOwner
+        recyclerNested.adapter = NestedAdapter(this@NestedFragment.viewModel)
         root
     }
 }
