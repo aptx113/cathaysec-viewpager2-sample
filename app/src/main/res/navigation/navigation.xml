@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
     app:startDestination="@id/HomeFragment">
 
     <fragment
         android:id="@+id/BankFragment"
         android:name="com.danteyu.studio.cathaysecassigment.ui.bank.BankFragment"
-        android:label="BankFragment">
+        android:label="BankFragment"
+        tools:layout="@layout/fragment_bank">
         <argument
             android:name="positionKey"
             android:defaultValue="0"
@@ -20,12 +22,14 @@
     <fragment
         android:id="@+id/BankListFragment"
         android:name="com.danteyu.studio.cathaysecassigment.ui.bank.item.BankListFragment"
-        android:label="BankListFragment" />
+        android:label="BankListFragment"
+        tools:layout="@layout/item_view_bank_list" />
 
     <fragment
         android:id="@+id/HomeFragment"
         android:name="com.danteyu.studio.cathaysecassigment.ui.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home" />
     <action
         android:id="@+id/navigate_to_BankFragment"
         app:destination="@id/BankFragment"
@@ -34,5 +38,11 @@
     <fragment
         android:id="@+id/sectionFragment"
         android:name="com.danteyu.studio.cathaysecassigment.ui.section.SectionFragment"
-        android:label="SectionFragment" />
+        android:label="SectionFragment"
+        tools:layout="@layout/frag_section" />
+    <fragment
+        android:id="@+id/nestedFragment"
+        android:name="com.danteyu.studio.cathaysecassigment.ui.nested.NestedFragment"
+        android:label="NestedFragment"
+        tools:layout="@layout/frag_nested" />
 </navigation>
