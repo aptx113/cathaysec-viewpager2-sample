@@ -9,15 +9,17 @@ import com.danteyu.studio.cathaysecassigment.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding =
-            DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-                .apply {
-                    lifecycleOwner = this@MainActivity
-                    bottomNavView.setupWithNavController(findNavController(R.id.myNavHostFragment))
-                }
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.apply {
+            lifecycleOwner = this@MainActivity
+            bottomNavView.setupWithNavController(findNavController(R.id.myNavHostFragment))
+
+        }
+
 
     }
 

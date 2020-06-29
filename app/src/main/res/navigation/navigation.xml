@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/HomeFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/BankFragment"
+        android:id="@+id/bankFragment"
         android:name="com.danteyu.studio.cathaysecassigment.ui.bank.BankFragment"
         android:label="BankFragment"
         tools:layout="@layout/fragment_bank">
@@ -20,19 +20,19 @@
             app:argType="boolean" />
     </fragment>
     <fragment
-        android:id="@+id/BankListFragment"
+        android:id="@+id/hankListFragment"
         android:name="com.danteyu.studio.cathaysecassigment.ui.bank.item.BankListFragment"
         android:label="BankListFragment"
         tools:layout="@layout/item_view_bank_list" />
 
     <fragment
-        android:id="@+id/HomeFragment"
+        android:id="@+id/homeFragment"
         android:name="com.danteyu.studio.cathaysecassigment.ui.home.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home" />
     <action
-        android:id="@+id/navigate_to_BankFragment"
-        app:destination="@id/BankFragment"
+        android:id="@+id/navigate_to_bankFragment"
+        app:destination="@id/bankFragment"
         app:enterAnim="@anim/fragment_fade_enter"
         app:popExitAnim="@anim/fragment_fade_exit" />
     <fragment

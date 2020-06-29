@@ -9,6 +9,7 @@ import com.danteyu.studio.cathaysecassigment.ui.nested.NestedViewModel
 /**
  * Created by George Yu on 2020/6/28.
  */
+
 class NestedTextsViewHolder(viewDataBinding: ItemNestedTextsBinding) :
     NestedViewHolder(viewDataBinding) {
 
