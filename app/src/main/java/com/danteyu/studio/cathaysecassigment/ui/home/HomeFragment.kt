@@ -6,10 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
+import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
 import com.danteyu.studio.cathaysecassigment.NavigationDirections
+import com.danteyu.studio.cathaysecassigment.data.model.alert.AlertData
 import com.danteyu.studio.cathaysecassigment.databinding.FragmentHomeBinding
+import com.danteyu.studio.cathaysecassigment.ext.observeEvent
+import com.danteyu.studio.cathaysecassigment.ext.showToast
 
 /**
  * Created by George Yu on 2020/5/16.
@@ -30,19 +33,30 @@ class HomeFragment : Fragment() {
         }
         binding.viewModel = viewModel
 
-        viewModel.navigateToHome.observe(viewLifecycleOwner, Observer {
-            it?.let {
-                findNavController().navigate(NavigationDirections.navigateToBankFragment())
-                viewModel.onHomeNavigated()
-            }
-        })
+        fun showToast(message: String) = requireContext().showToast(message)
 
-        viewModel.navigateToHomeList.observe(viewLifecycleOwner, Observer {
-            it?.let {
-                findNavController().navigate(NavigationDirections.navigateToBankFragment(it))
-                viewModel.onHomeListNavigated()
-            }
-        })
+        viewModel.navigateToHome.observe(viewLifecycleOwner) {
+            findNavController().navigate(NavigationDirections.navigateToBankFragment())
+            viewModel.onHomeNavigated()
+
+        }
+
+        viewModel.navigateToHomeList.observe(viewLifecycleOwner) {
+            findNavController().navigate(NavigationDirections.navigateToBankFragment(it))
+            viewModel.onHomeListNavigated()
+        }
+
+        viewModel.showAlert2.observeEvent(viewLifecycleOwner) {
+            findNavController().navigate(
+                NavigationDirections.navigateToAlert2(
+                    AlertData.create(
+                        content = "Test",
+                        positiveAction = { showToast("Say Yes!!") },
+                        negativeAction = { }
+                    )
+                )
+            )
+        }
 
         return binding.root
     }

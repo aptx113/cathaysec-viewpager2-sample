@@ -23,7 +23,7 @@
         android:id="@+id/bankListFragment"
         android:name="com.danteyu.studio.cathaysecassigment.ui.bank.item.BankListFragment"
         android:label="BankListFragment"
-        tools:layout="@layout/item_view_bank_list" >
+        tools:layout="@layout/item_view_bank_list">
         <action
             android:id="@+id/navigate_to_bankListFrag"
             app:destination="@id/bankFragment" />
@@ -59,4 +59,16 @@
             app:popUpTo="@id/splashFragment"
             app:popUpToInclusive="true" />
     </fragment>
+    <dialog
+        android:id="@+id/alert2DialogFragment"
+        android:name="com.danteyu.studio.cathaysecassigment.ui.alert.Alert2DialogFragment"
+        android:label="Alert2DialogFragment"
+        tools:layout="@layout/dialog_alert">
+        <argument
+            android:name="alertArgs"
+            app:argType="com.danteyu.studio.cathaysecassigment.data.model.alert.AlertData" />
+    </dialog>
+    <action
+        android:id="@+id/navigate_to_alert2"
+        app:destination="@id/alert2DialogFragment" />
 </navigation>
