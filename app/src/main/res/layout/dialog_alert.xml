@@ -4,6 +4,9 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.danteyu.studio.cathaysecassigment.ui.alert.Alert2DialogViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,6 +29,7 @@
                 android:id="@+id/btn_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="@{_ -> viewModel.inNegativeBtnClicked()}"
                 android:text="@string/cancel"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/btn_ok"
@@ -39,6 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/space_normal_32"
                 android:layout_marginStart="@dimen/space_normal_16"
+                android:onClick="@{_ -> viewModel.onPositiveBtnClicked()}"
                 android:text="@string/ok"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
