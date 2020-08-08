@@ -5,14 +5,17 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.ListAdapter
+import com.danteyu.studio.cathaysecassigment.CathaysecApplication
 import com.danteyu.studio.cathaysecassigment.R
 import com.danteyu.studio.cathaysecassigment.data.model.section.ActionSection
 import com.danteyu.studio.cathaysecassigment.data.model.section.RecommendSection
 import com.danteyu.studio.cathaysecassigment.data.model.section.Section
 import com.danteyu.studio.cathaysecassigment.databinding.ItemSectionRecommendSectionBinding
+import com.danteyu.studio.cathaysecassigment.ui.common.OnSwipeTouchListener
 import com.danteyu.studio.cathaysecassigment.ui.common.SingleFieldDiffUtils
 import com.danteyu.studio.cathaysecassigment.ui.section.recommendSection.RecommendSectionViewHolder
 import com.danteyu.studio.cathaysecassigment.ui.section.actionSection.ActionSectionViewHolder
+import com.google.android.material.internal.ContextUtils.getActivity
 
 /**
  * Created by George Yu on 2020/6/20.
@@ -40,7 +43,38 @@ class SectionAdapter(private val viewModel: SectionViewModel) :
         return DataBindingUtil.inflate<ViewDataBinding>(layoutInflater, viewType, parent, false)
             .run {
                 when (viewType) {
-                    TYPE_ACTION -> ActionSectionViewHolder(this )
+                    TYPE_ACTION -> ActionSectionViewHolder(this ).apply {
+                        itemView.setOnTouchListener(object :
+                OnSwipeTouchListener(parent.context) {
+
+                override fun onSwipe(direction: Direction?): Boolean {
+                    return if (direction == null) {
+                        false
+                    } else {
+
+                        when (direction) {
+
+                            Direction.RIGHT -> {
+
+                                true
+                            }
+                            Direction.LEFT -> {
+
+                                true
+                            }
+                            Direction.UP -> {
+
+                                true
+                            }
+                            Direction.DOWN -> {
+
+                                true
+                            }
+                        }
+                    }
+                }
+            })
+                    }
                     TYPE_RECOMMEND -> RecommendSectionViewHolder(this as ItemSectionRecommendSectionBinding)
                     else -> throw ClassCastException("Unknown viewType $viewType")
                 }

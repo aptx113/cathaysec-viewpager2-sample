@@ -35,11 +35,18 @@
             android:layout_height="wrap_content"
             android:onClick="@{()-> viewModel.navigateToViewPager2List(BankAdapterKt.VIEWPAGER2_LIST_PAGE_INDEX)}"
             android:text="navigate to ViewPager2List"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/placeholder"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_offline_1" />
+
+        <include
+            android:id="@+id/placeholder"
+            layout="@layout/bottom_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_bottom_nav"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
