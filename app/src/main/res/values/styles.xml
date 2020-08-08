@@ -7,6 +7,8 @@
         <item name="colorPrimaryDark">@color/tab_blue</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="buttonTint">@color/blue</item>
+        <item name="android:windowDisablePreview">true</item>
+
     </style>
 
     <style name="Tab_Text_Appearance" parent="TextAppearance.AppCompat">

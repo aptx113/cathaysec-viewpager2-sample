@@ -42,10 +42,6 @@ class NestedFragment : Fragment() {
         recyclerView.setOnTouchListener(
             object : OnSwipeTouchListener(context) {
 
-                override fun onSingleTap() {
-                    TODO("Not yet implemented")
-                }
-
                 override fun onSwipe(direction: Direction?): Boolean {
                     when (direction) {
                         Direction.UP -> requireActivity().showToast("Swipe Up")

@@ -20,10 +20,14 @@
             app:argType="boolean" />
     </fragment>
     <fragment
-        android:id="@+id/hankListFragment"
+        android:id="@+id/bankListFragment"
         android:name="com.danteyu.studio.cathaysecassigment.ui.bank.item.BankListFragment"
         android:label="BankListFragment"
-        tools:layout="@layout/item_view_bank_list" />
+        tools:layout="@layout/item_view_bank_list" >
+        <action
+            android:id="@+id/navigate_to_bankListFrag"
+            app:destination="@id/bankFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/homeFragment"
@@ -45,4 +49,14 @@
         android:name="com.danteyu.studio.cathaysecassigment.ui.nested.NestedFragment"
         android:label="NestedFragment"
         tools:layout="@layout/frag_nested" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.danteyu.studio.cathaysecassigment.ui.splash.SplashFragment"
+        android:label="SplashFragment">
+        <action
+            android:id="@+id/navigate_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
