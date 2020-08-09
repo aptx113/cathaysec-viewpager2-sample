@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="space_normal">16dp</dimen>
     <dimen name="spacing_half">8dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="space_normal_16">16dp</dimen>
+    <dimen name="space_normal_8">8dp</dimen>
+    <dimen name="space_normal_4">4dp</dimen>
+    <dimen name="height_bottom_nav">56dp</dimen>
+    <dimen name="space_normal_32">32dp</dimen>
 </resources>

@@ -5,45 +5,70 @@
 
     <data>
 
+        <import type="com.danteyu.studio.cathaysecassigment.ui.bank.BankAdapterKt" />
+
+        <variable
+            name="viewModel"
+            type="com.danteyu.studio.cathaysecassigment.ui.home.HomeViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayout_home"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/button_offline_1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="@{()->viewModel.navigateToViewPager2()}"
+            android:text="navigate to ViewPager2Image"
+            app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tabIndicatorColor="@color/tab_blue"
-            app:tabIndicatorHeight="1dp"
-            app:tabMode="fixed"
-            app:tabPaddingBottom="12dp"
-            app:tabPaddingTop="12dp"
-            app:tabSelectedTextColor="@color/colorBlack"
-            app:tabTextAppearance="@style/Tab_Text_Appearance"
-            app:tabTextColor="#888888" />
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:layout_editor_absoluteX="64dp" />
 
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="47dp"
-            android:background="?android:attr/listDivider"
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()-> viewModel.navigateToViewPager2List(BankAdapterKt.VIEWPAGER2_LIST_PAGE_INDEX)}"
+            android:text="navigate to ViewPager2List"
+            app:layout_constraintBottom_toTopOf="@+id/btn_show_alert2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/button_offline_1"
+            tools:layout_editor_absoluteX="72dp" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_show_alert2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{_ -> viewModel.onAlert2Showed()}"
+            android:text="ShowAlert2"
+            app:layout_constraintBottom_toTopOf="@+id/placeholder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/viewPager_home"
+        <include
+            android:id="@+id/placeholder"
+            layout="@layout/bottom_placeholder"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tabLayout_home" />
+            android:layout_height="@dimen/height_bottom_nav"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_animation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlack"
+            android:translationZ="5dp">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

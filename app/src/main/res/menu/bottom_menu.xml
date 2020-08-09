@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_action_home"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/bankFragment"
+        android:icon="@drawable/ic_view_agenda"
+        android:title="@string/bank" />
+    <item
+        android:id="@+id/sectionFragment"
+        android:icon="@drawable/ic_call_split"
+        android:title="@string/section" />
+    <item
+        android:id="@+id/nestedFragment"
+        android:icon="@drawable/ic_view_module"
+        android:title="@string/nested" />
+
+</menu>
