@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:defaultNavHost="true"
-            app:layout_constraintBottom_toTopOf="@id/bottom_nav_view"
+            app:layout_constraintBottom_toBottomOf="parent "
             app:layout_constraintTop_toTopOf="parent"
             app:navGraph="@navigation/navigation" />
 
@@ -26,6 +26,7 @@
             android:id="@+id/bottom_nav_view"
             android:layout_width="match_parent"
             android:layout_height="56dp"
+            android:translationZ="-10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:menu="@menu/bottom_menu" />
 
