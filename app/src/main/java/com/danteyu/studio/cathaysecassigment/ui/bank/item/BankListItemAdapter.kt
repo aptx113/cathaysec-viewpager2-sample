@@ -2,7 +2,9 @@ package com.danteyu.studio.cathaysecassigment.ui.bank.item
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.danteyu.studio.cathaysecassigment.R
 import com.danteyu.studio.cathaysecassigment.data.model.bank.WeekItem
 import com.danteyu.studio.cathaysecassigment.databinding.ItemViewBankListBinding
 import com.danteyu.studio.cathaysecassigment.ui.common.InfiniteListAdapter
@@ -33,7 +35,7 @@ class BankListItemAdapter :
         )
     }
 
-        override fun onBindViewHolderByRealPosition(holder: WeekItemViewHolder, realPosition: Int) {
+    override fun onBindViewHolderByRealPosition(holder: WeekItemViewHolder, realPosition: Int) {
         holder.bind(getItem(realPosition))
     }
 }

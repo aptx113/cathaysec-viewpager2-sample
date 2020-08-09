@@ -25,9 +25,16 @@
             android:layout_height="0dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/placeholder"
             app:layout_constraintTop_toBottomOf="@id/toolbar"
             binding:nestedItems="@{viewModel.nestedItems}" />
+
+        <include
+            android:id="@+id/placeholder"
+            layout="@layout/bottom_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_bottom_nav"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

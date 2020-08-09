@@ -2,8 +2,10 @@ package com.danteyu.studio.cathaysecassigment.ui.section.recommendSection
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
+import com.danteyu.studio.cathaysecassigment.R
 import com.danteyu.studio.cathaysecassigment.data.model.section.RecommendSectionItem
 import com.danteyu.studio.cathaysecassigment.databinding.ItemSectionRecommendSectionItemBinding
 
@@ -26,6 +28,7 @@ class RecommendSectionItemAdapter :
     }
 
     override fun onBindViewHolder(holder: RecommendSectionItemViewHolder, position: Int) {
+        holder.itemView.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.sectionFragment))
         holder.bind(getItem(position))
     }
 

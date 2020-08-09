@@ -2,7 +2,9 @@ package com.danteyu.studio.cathaysecassigment.ui.nested.nestedText
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.ListAdapter
+import com.danteyu.studio.cathaysecassigment.R
 import com.danteyu.studio.cathaysecassigment.databinding.ItemNestedTextBinding
 import com.danteyu.studio.cathaysecassigment.ui.common.SingleFieldDiffUtils
 
@@ -20,6 +22,7 @@ class NestedTextAdapter :
     }
 
     override fun onBindViewHolder(holder: NestedTextViewHolder, position: Int) {
+        holder.itemView.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.nestedFragment))
         holder.bind(getItem(position))
     }
 }

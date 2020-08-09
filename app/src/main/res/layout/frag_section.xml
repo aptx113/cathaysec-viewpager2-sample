@@ -27,9 +27,16 @@
             android:clipToPadding="false"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/placeholder"
             app:layout_constraintTop_toBottomOf="@id/toolbar"
             binding:sectionItems="@{viewModel.sections}" />
+
+        <include
+            android:id="@+id/placeholder"
+            layout="@layout/bottom_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_bottom_nav"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
