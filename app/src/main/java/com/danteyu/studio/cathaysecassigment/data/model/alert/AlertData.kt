@@ -1,6 +1,7 @@
 package com.danteyu.studio.cathaysecassigment.data.model.alert
 
 import android.os.Parcelable
+import kotlinx.android.parcel.IgnoredOnParcel
 import kotlinx.android.parcel.Parcelize
 import java.io.Serializable
 
@@ -14,8 +15,9 @@ data class AlertData(
     val negativeAction: Parcelable?
 ) : Parcelable {
 
+    @IgnoredOnParcel
     @Suppress("UNCHECKED_CAST")
-    fun performPositiveAction() = positiveAction as? () -> Unit
+    val performPositiveAction = positiveAction as? () -> Unit
 
     @Suppress("UNCHECKED_CAST")
     fun performNegativeAction() = negativeAction as? () -> Unit

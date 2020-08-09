@@ -35,7 +35,7 @@ class HomeFragment : Fragment() {
         }
         binding.viewModel = viewModel
 
-        fun showToast(message: String) = requireContext().showToast(message)
+
 
         viewModel.navigateToBankImage.observeEvent(viewLifecycleOwner) {
             findNavController().navigate(R.id.bankFragment)
@@ -51,7 +51,7 @@ class HomeFragment : Fragment() {
                 NavigationDirections.navigateToAlert2(
                     AlertData.create(
                         content = "Test",
-                        positiveAction = { showToast("Say Yes!!") },
+                        positiveAction = { onNestedNavigated() },
                         negativeAction = { }
                     )
                 )
@@ -68,4 +68,8 @@ class HomeFragment : Fragment() {
             setAnimationListener({}, { viewDataBinding.layoutAnimation.visibility = View.GONE }, {})
         }.let { viewDataBinding.layoutAnimation.startAnimation(it) }
     }
+
+    fun showToast(message: String) = requireContext().showToast(message)
+
+    private fun onNestedNavigated() = findNavController().navigate(R.id.carouselFragment)
 }

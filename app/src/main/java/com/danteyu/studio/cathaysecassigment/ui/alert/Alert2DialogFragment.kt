@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatDialogFragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.danteyu.studio.cathaysecassigment.databinding.DialogAlertBinding
 import com.danteyu.studio.cathaysecassigment.ext.observeEvent
@@ -29,11 +30,12 @@ class Alert2DialogFragment : AppCompatDialogFragment() {
         }
 
         viewModel.isPositiveBtnClicked.observeEvent(viewLifecycleOwner) {
-            args.alertArgs.performPositiveAction()?.invoke()
+            if (args.alertArgs.performPositiveAction == null) findNavController().navigateUp()
+            args.alertArgs.performPositiveAction?.invoke()
         }
 
         viewModel.isNegativeBtnClicked.observeEvent(viewLifecycleOwner) {
-            if (args.alertArgs.negativeAction == null) dismiss()
+            if (args.alertArgs.performNegativeAction() == null) dismiss()
         }
 
         return viewDataBinding.root
