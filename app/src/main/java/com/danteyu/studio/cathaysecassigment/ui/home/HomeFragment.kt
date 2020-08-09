@@ -61,6 +61,8 @@ class HomeFragment : Fragment() {
             )
         }
 
+        startAnimation(binding)
+
         return binding.root
     }
 
