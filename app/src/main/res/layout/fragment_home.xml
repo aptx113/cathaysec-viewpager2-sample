@@ -21,7 +21,7 @@
             android:id="@+id/button_offline_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{()->viewModel.navigateToViewPager2()}"
+            android:onClick="@{()->viewModel.onBankImageNavigated()}"
             android:text="navigate to ViewPager2Image"
             app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"

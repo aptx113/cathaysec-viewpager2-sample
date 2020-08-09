@@ -7,15 +7,14 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
 import com.danteyu.studio.cathaysecassigment.NavigationDirections
-import com.danteyu.studio.cathaysecassigment.data.model.alert.AlertData
 import com.danteyu.studio.cathaysecassigment.R
+import com.danteyu.studio.cathaysecassigment.data.model.alert.AlertData
 import com.danteyu.studio.cathaysecassigment.databinding.FragmentHomeBinding
 import com.danteyu.studio.cathaysecassigment.ext.observeEvent
-import com.danteyu.studio.cathaysecassigment.ext.showToast
 import com.danteyu.studio.cathaysecassigment.ext.setAnimationListener
+import com.danteyu.studio.cathaysecassigment.ext.showToast
 
 /**
  * Created by George Yu on 2020/5/16.
@@ -38,15 +37,13 @@ class HomeFragment : Fragment() {
 
         fun showToast(message: String) = requireContext().showToast(message)
 
-        viewModel.navigateToHome.observe(viewLifecycleOwner) {
-            findNavController().navigate(NavigationDirections.navigateToBankFragment())
-            viewModel.onHomeNavigated()
+        viewModel.navigateToBankImage.observeEvent(viewLifecycleOwner) {
+            findNavController().navigate(R.id.bankFragment)
 
         }
 
-        viewModel.navigateToHomeList.observe(viewLifecycleOwner) {
-            findNavController().navigate(NavigationDirections.navigateToBankFragment(it))
-            viewModel.onHomeListNavigated()
+        viewModel.navigateToBankList.observeEvent(viewLifecycleOwner) {
+            findNavController().navigate(NavigationDirections.navigateToBankFragment(positionKey = it))
         }
 
         viewModel.showAlert2.observeEvent(viewLifecycleOwner) {

@@ -10,33 +10,21 @@ import com.danteyu.studio.cathaysecassigment.Event
  */
 class HomeViewModel : ViewModel() {
 
-    private val _navigateToHome = MutableLiveData<Boolean>()
+    private val _navigateToBankImage = MutableLiveData<Event<Boolean>>()
+    val navigateToBankImage: LiveData<Event<Boolean>> = _navigateToBankImage
 
-    val navigateToHome: LiveData<Boolean>
-        get() = _navigateToHome
-
-    private val _navigateToHomeList = MutableLiveData<Int>()
-
-    val navigateToHomeList: LiveData<Int>
-        get() = _navigateToHomeList
+    private val _navigateToBankList = MutableLiveData<Event<Int>>()
+    val navigateToBankList: LiveData<Event<Int>> = _navigateToBankList
 
     private val _showAlert2 = MutableLiveData<Event<Boolean>>()
     val showAlert2: LiveData<Event<Boolean>> = _showAlert2
 
-    fun navigateToViewPager2() {
-        _navigateToHome.value = true
-    }
-
-    fun onHomeNavigated() {
-        _navigateToHome.value = null
+    fun onBankImageNavigated() {
+        _navigateToBankImage.value = Event(true)
     }
 
     fun navigateToViewPager2List(position: Int) {
-        _navigateToHomeList.value = position
-    }
-
-    fun onHomeListNavigated() {
-        _navigateToHomeList.value = null
+        _navigateToBankList.value = Event(position)
     }
 
     fun onAlert2Showed() {
