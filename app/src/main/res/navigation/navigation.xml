@@ -71,4 +71,8 @@
     <action
         android:id="@+id/navigate_to_alert2"
         app:destination="@id/alert2DialogFragment" />
+    <fragment
+        android:id="@+id/bankImageFragment"
+        android:name="com.danteyu.studio.cathaysecassigment.ui.bank.item.BankImageFragment"
+        android:label="BankImageFragment" />
 </navigation>
