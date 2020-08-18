@@ -12,16 +12,17 @@ inline fun Animation.setAnimationListener(
     crossinline onAnimationRepeat: ((animation: Animation?) -> Unit)
 ) {
     setAnimationListener(object : Animation.AnimationListener {
-        override fun onAnimationRepeat(animation: Animation?) {
-            onAnimationRepeat(animation)
+
+        override fun onAnimationStart(animation: Animation?) {
+            onAnimationStart(animation)
         }
 
         override fun onAnimationEnd(animation: Animation?) {
             onAnimationEnd(animation)
         }
 
-        override fun onAnimationStart(animation: Animation?) {
-            onAnimationStart(animation)
+        override fun onAnimationRepeat(animation: Animation?) {
+            onAnimationRepeat(animation)
         }
     })
 }
